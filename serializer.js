@@ -27,12 +27,13 @@ const ForkDataSerializer = new ContainerType(
 function computeForkRoot(forkVersion, genesisValidatorRoot) {
   return ForkDataSerializer.hashTreeRoot(
     ForkDataSerializer.fromJson({
-      current_version: forkVersion,
-      genesis_validators_root: genesisValidatorRoot,
+      current_version: Buffer.from(forkVersion).toString('hex'),
+      genesis_validators_root: Buffer.from(genesisValidatorRoot).toString('hex'),
     }))
 }
 
 function computeDomain(domainType, domainConfig) {
+  console.log(domainType)
   // Create a ForkData Object's hash tree root
   const forkDataRoot = computeForkRoot(domainConfig.CAPELLA_FORK_VERSION, domainConfig.GENESIS_VALIDATORS_ROOT);
 

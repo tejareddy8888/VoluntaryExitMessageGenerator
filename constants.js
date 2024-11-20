@@ -43,7 +43,6 @@ const mainnetChainConfig = {
 
     // https://github.com/ChainSafe/lodestar/blob/25c2ee5e5bc4b062c545447235c03f235871b061/packages/config/src/networks.ts#L36
     GENESIS_VALIDATORS_ROOT: fromHex("0x4b363db94e286120d76eb905340fdd4e54bfe9f06bf33ff6cf5ad27f511bfe95")
-
 }
 
 module.exports = { DOMAIN_VOLUNTARY_EXIT, mainnetChainConfig, holeskyChainConfig }

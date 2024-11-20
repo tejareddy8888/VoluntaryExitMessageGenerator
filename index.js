@@ -1,8 +1,8 @@
 const { PublicKey, SecretKey, verify, Signature } = require('@chainsafe/blst');
 
 const { decrypt } = require('./decrypt');
-const { holeskyChainConfig, mainnetChainConfig } = require('./constants');
-const { VEMSerializer, SigningDataSerializer, DOMAIN_VOLUNTARY_EXIT, computeDomain } = require('./serializer');
+const { holeskyChainConfig, mainnetChainConfig, DOMAIN_VOLUNTARY_EXIT } = require('./constants');
+const { VEMSerializer, SigningDataSerializer, computeDomain } = require('./serializer');
 require('dotenv').config();
 
 const KEY = Buffer.from(process.env.AES_KEY, 'hex');
